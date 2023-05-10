@@ -6,7 +6,7 @@ import img4 from '../../../assets/images/banner/4.jpg'
 
 const Bannar = () => {
     return (
-      <div className="carousel w-full h-[500px] bg-cover bg-center">
+      <div className="carousel w-full h-[500px] bg-cover bg-center rounded-lg mt-3 mb-10">
         <div
           id="slide1"
           className="carousel-item relative w-full "
