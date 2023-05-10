@@ -11,7 +11,6 @@ const ServicesItems = ({ service }) => {
           <div className="flex text-red-500 justify-between pb-3">
             <h3>{price}</h3>
             <FaArrowRight />
-            authentication
           </div>
         </div>
       </div>

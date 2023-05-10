@@ -12,7 +12,9 @@ export default function Navbar() {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="javascript:void(0)">
               <h2 className="w-16">
-                <img src={logo} alt="" />
+                <Link to="/">
+                  <img src={logo} alt="" />
+                </Link>
               </h2>
             </a>
             <div className="md:hidden">
@@ -70,10 +72,10 @@ export default function Navbar() {
                 <Link>Service</Link>
               </li>
               <li className=" ">
-                <Link>Blog</Link>
+                <Link to="/register">Blog</Link>
               </li>
               <li className=" ">
-                <Link>Contacr</Link>
+                <Link to="/contact">Contacr</Link>
               </li>
             </ul>
           </div>
