@@ -11,7 +11,7 @@ const ServicesItems = ({ service }) => {
           <h2>{title}</h2>
           <div className="flex text-red-500 justify-between pb-3">
             <h3>{price}</h3>
-            <Link to={`/chakout/${_id}`}>
+            <Link to={`/book/${_id}`}>
               {" "}
               <FaArrowRight />
             </Link>
