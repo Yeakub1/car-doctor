@@ -2,8 +2,9 @@ import { useState } from "react";
 import logo from "../../../assets/logo.svg";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+const Navbar =() => {
   const [navbar, setNavbar] = useState(false);
+
 
   return (
     <nav className="w-full shadow-lg">
@@ -96,3 +97,4 @@ export default function Navbar() {
     </nav>
   );
 }
+export default Navbar;
