@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import logo from "../../../assets/logo.svg";
 import { Link } from "react-router-dom";
+import { authContext } from "../../Providers/AuthProviders";
 
 const Navbar =() => {
   const [navbar, setNavbar] = useState(false);
+ 
 
+   const { user, logOut } = useContext(authContext);
+
+   const handleLogOut = () => {
+     logOut()
+       .then()
+       .catch((error) => console.log(error));
+   };
 
   return (
     <nav className="w-full shadow-lg">
@@ -76,7 +85,7 @@ const Navbar =() => {
                 <Link to="/">Blog</Link>
               </li>
               <li className=" ">
-                <Link to="/register">Contacr</Link>
+                <Link to="/">Contacr</Link>
               </li>
             </ul>
           </div>
@@ -88,9 +97,29 @@ const Navbar =() => {
               navbar ? "block" : "hidden"
             }`}
           >
-            <li className="list-none px-4 py-2 outline outline-offset-2 outline-1 text-red-500 font-bold hover:bg-red-500 hover:text-white">
-              <Link>Appointment</Link>
-            </li>
+            <div className="flex">
+              <li className="list-none px-4 py-2 flex ">
+                {user?.email ? (
+                  <>
+                    
+                    <li>
+                      <Link className="mr-4" to="/bookings">My bookings</Link>
+                    </li>
+                    
+                    <li>
+                      <button  onClick={handleLogOut}>Log out</button>
+                    </li>
+                   
+                  </>
+                ) : (
+                  <Link to="/register">LogIn</Link>
+                )}
+              </li>
+
+              <li className="list-none px-4 py-2 outline outline-offset-2 outline-1 text-red-500 font-bold hover:bg-red-500 hover:text-white">
+                <Link>Appointment</Link>
+              </li>
+            </div>
           </div>
         </div>
       </div>
